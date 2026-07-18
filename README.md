@@ -1,44 +1,45 @@
-# Research Crew 🤖
+# Research Crew
 
-A powerful multi-agent AI system built with [CrewAI](https://crewai.com) that conducts thorough research on any topic and generates comprehensive reports.
+Lightweight multi-agent research system using CrewAI. Keeps things simple: research a topic and generate a Markdown report.
 
-## Overview
+Quick run (default topic: "AI LLMs")
 
-Research Crew orchestrates multiple AI agents to:
-- **Research** - Uncover cutting-edge developments and insights on your topic
-- **Analyze** - Process and organize complex information
-- **Report** - Generate detailed, well-structured reports in Markdown format
+1. Copy `.env.example` to `.env` and edit if needed.
 
-Perfect for market research, competitive analysis, technology trends, and general information gathering.
+2a — Run with OpenAI (set `OPENAI_API_KEY` in `.env`):
 
-## Features
-
-- 🔍 **Intelligent Research** - AI-powered agents that dig deep into topics
-- 📊 **Structured Reports** - Auto-generated Markdown reports with organized sections
-- 🔄 **Sequential Processing** - Agents work together in a logical workflow
-- 🎯 **Customizable** - Easily modify agents, tasks, and tools
-- 🚀 **Production Ready** - Built on proven CrewAI framework
-- 📝 **Training & Testing** - Train agents or replay specific tasks
-
-## Quick Start
-
-### Prerequisites
-
-- Python 3.10+ (< 3.14)
-- OpenAI API key (or compatible LLM)
-
-### Installation
-
-1. **Clone and Navigate**
 ```bash
-git clone https://github.com/YOUR_USERNAME/research-crew.git
-cd research-crew
+pip install -r requirements.txt
+crewai run
 ```
 
-2. **Install UV** (if not already installed)
-```bash
-pip install uv
+2b — Run with a local Ollama model (no OpenAI key):
+
+Edit `.env` or create it with:
+
+```env
+# Use Ollama local model
+MODEL=ollama/nemotron-3-super:cloud
+API_BASE=http://localhost:11434
 ```
+
+Then run:
+
+```bash
+pip install -r requirements.txt
+crewai run
+```
+
+Notes:
+- Keep `.env` private (do not commit).
+- Use `.env.example` as the template.
+
+Files of interest:
+- `src/research_crew/crew.py` — crew and agent configuration
+- `src/research_crew/main.py` — entry point
+- `src/research_crew/config/agents.yaml` and `tasks.yaml` — agent/task definitions
+
+That's it — short and straight. Replace `topic` in `src/research_crew/main.py` to change what gets researched.
 
 3. **Install Dependencies**
 ```bash
