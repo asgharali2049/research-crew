@@ -153,6 +153,10 @@ def researcher(self) -> Agent:
     )
 ```
 
+## 🚀 Sample Output
+Want to see what ResearchCrew generates? Check out a report generated on the topic of *State of Large Language Models in 2026 : Advances, Applications, and Societal Impact*:
+- 📄 [View Sample Research Report](report.md)
+
 ## Advanced Usage
 
 ### Train the Crew
